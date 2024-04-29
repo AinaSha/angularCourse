@@ -1,0 +1,75 @@
+<!-- <div 
+	*ngFor="
+		let color of colors; 
+		let i = index; 
+		let first = first; 
+		let last= last; 
+		let count = count
+	"
+>
+	<span>{{i}}. {{first ? 'I am first': ''}} {{last ? 'I am last' : ''}} {{color}}</span>
+</div>
+<br> -->
+
+
+<!-- new form of writing in Ang17 -->
+
+<!-- @for (color of colors; track color; let i = $index; let first =$first; let last = $last) {
+	<div>
+		<span>{{i}}. {{first ? 'I am first': ''}} {{last ? 'I am last' : ''}} {{color}}</span>
+	</div>
+}
+@empty {
+	<span>Empty array</span>
+} -->
+
+@for (color of colors; track color; let i = $index; let first =$first; let last = $last) {
+<div>
+	<button (click)="currentColor = color">
+		{{color}}
+	</button>
+</div>
+}
+@empty {
+<span>Empty array</span>
+}
+
+
+<!-- ngIf -->
+
+<!-- <div *ngIf="isShow; else emptyState">
+	<span>{{ isShow}} I got out because the meaning is true</span>
+</div>
+
+<button (click)="isShow = !isShow">Click</button>
+
+<ng-template #emptyState>
+	<span> {{ isShow}} I got out because the meaning is false</span>
+</ng-template> -->
+
+<!-- @if(isShow) {
+	<span>{{ isShow}} I got out because the meaning is true</span>
+}@else {
+	<span> {{ isShow}} I got out because the meaning is false</span>
+}
+
+<button (click)="isShow = !isShow">Click</button> -->
+
+
+
+<!-- ngSwitch -->
+
+<div [ngSwitch]="currentColor">
+	<span *ngSwitchCase="'red'">Selected color - red</span>
+	<span *ngSwitchCase="'blue'">Selected color - blue</span>
+	<span *ngSwitchCase="'green'">Selected color - green</span>
+</div>
+
+@switch (currentColor) {
+	@case ('red') {
+		<span>Selected color - red</span>
+	}
+	@default {
+		
+	}
+}

@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: () => import('./object-list/object-list.module').then((m) => m.MyObjectListModule)
   },
   {
+    path: 'directives',
+    loadChildren: () => import('./directives/directives.module').then((m) => m.DirecttivesModule)
+  },
+  {
     path: '**',
     component: MyEmptyPage
   }
