@@ -23,7 +23,7 @@
 	<span>Empty array</span>
 } -->
 
-@for (color of colors; track color; let i = $index; let first =$first; let last = $last) {
+<!-- @for (color of colors; track color; let i = $index; let first =$first; let last = $last) {
 <div>
 	<button (click)="currentColor = color">
 		{{color}}
@@ -32,7 +32,7 @@
 }
 @empty {
 <span>Empty array</span>
-}
+} -->
 
 
 <!-- ngIf -->
@@ -59,7 +59,7 @@
 
 <!-- ngSwitch -->
 
-<div [ngSwitch]="currentColor">
+<!-- <div [ngSwitch]="currentColor">
 	<span *ngSwitchCase="'red'">Selected color - red</span>
 	<span *ngSwitchCase="'blue'">Selected color - blue</span>
 	<span *ngSwitchCase="'green'">Selected color - green</span>
@@ -72,4 +72,16 @@
 	@default {
 		
 	}
-}
+} -->
+
+<!-- <span [ngStyle]="elementStyle">I am the text modified by the class field</span> -->
+
+<!-- //custom attribute directive -->
+<h2 [myChangeColor] ='colors' >Directives</h2>
+
+<!-- custom sructure directive -->
+<span *myIf="isShow">{{ isShow }}</span>
+
+<br>
+
+<button (click)="isShow = !isShow">Click me!</button>

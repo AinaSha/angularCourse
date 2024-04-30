@@ -19,4 +19,14 @@ export class DirectivesPageComponent {
 	// 	ngSwitch
 	
 	public currentColor: string = this.colors[0];
+
+	//ngStyle
+
+	public elementStyle: any = {
+	 	color: 'red',
+		opacity: 0.5,
+		
+	}
+	//ngClass
+
 }
