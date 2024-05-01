@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('./directives/directives.module').then((m) => m.DirecttivesModule)
   },
   {
+    path: 'life-cycle',
+    loadChildren: () => import('./lifecycle/life-cycle.module').then((m) => m.LifeCycleModule)
+  },
+  {
     path: '**',
     component: MyEmptyPage
   }
